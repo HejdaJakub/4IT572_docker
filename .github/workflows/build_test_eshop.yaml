@@ -63,8 +63,8 @@ jobs:
             ~/.npm
             ./node_modules
             ./build
-          key: ${{ runner.os }}-buld-${{ gihub.run_id }}
-          restore-keys: ${{ runner.os }}-buld-${{ gihub.run_id }}
+          key: ${{ runner.os }}-buld-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-buld-${{ github.run_id }}
 
 
   Test:
@@ -109,7 +109,7 @@ jobs:
             ~/.npm
             ./node_modules
             ./build
-          key: ${{ runner.os }}-buld-${{ gihub.run_id }}
+          key: ${{ runner.os }}-buld-${{ github.run_id }}
 
       - name: Deploy to firebase
         run: ./node_modules/.bin/firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
